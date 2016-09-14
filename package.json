@@ -1,0 +1,39 @@
+{
+  "name": "haber",
+  "version": "1.0.0",
+  "description": "react learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pug": "pug src/public/index.pug -o public",
+    "browserify": "browserify -d -t babelify src/public/js/index.js -o public/js/index.js",
+    "babel": "babel src/app -d app",
+    "build": "npm run pug && npm run browserify && npm run babel",
+    "start": "node app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathiedart/haber.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Kathie Dart <npm@kathiedart.uk>",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/kathiedart/haber/issues"
+  },
+  "homepage": "https://github.com/kathiedart/haber#readme",
+  "dependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}
