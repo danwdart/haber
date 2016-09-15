@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pug": "pug src/public/index.pug -o public",
-    "browserify": "browserify -d -t babelify src/public/js/index.js -o public/js/index.js",
+    "pug": "pug public/src/index.pug -o public",
+    "browserify": "browserify -d -t babelify public/src/js/index.js -o public/js/index.js",
     "babel": "babel src/app -d app",
     "build": "npm run pug && npm run browserify && npm run babel",
     "start": "node app/index.js"
