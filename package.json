@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "pug": "pug public/src/index.pug -o public",
     "browserify": "browserify -d -t babelify public/src/js/index.js -o public/js/index.js",
-    "babel": "babel src/app -d app",
+    "babel": "babel src -d app",
     "build": "npm run pug && npm run browserify && npm run babel",
     "watch-js": "watchy -w public/src/js -- npm run browserify",
-    "watch-app": "watchy -w src/app/**/*.js -- npm run babel",
+    "watch-app": "watchy -w src/**/*.js -- npm run babel",
     "watch-views": "watchy -w public/src/pug/ -- npm run pug",
     "watch": "npm run watch-js & npm run watch-app & npm run watch-views",
     "start": "node app/index.js"
@@ -29,18 +29,18 @@
   },
   "homepage": "https://github.com/kathiedart/haber#readme",
   "dependencies": {
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
-    "express": "^4.14.0",
-    "isomorphic-fetch": "^2.2.1",
     "pug-cli": "^1.0.0-alpha6",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1"
-  },
-  "devDependencies": {
     "watchy": "^0.6.6"
   }
 }
