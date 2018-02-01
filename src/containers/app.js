@@ -8,23 +8,30 @@ import Foo from '../components/foo';
 
 import * as ButtonActions from '../actions/button';
 
-const App = ({stuff, actions}) => (
+const App = ({buttonPressed, timesPressed, actions}) => (
     <div>
-        <Foo name="Bob" stuff={stuff}>
+        <Foo name="Bob">
             <p>Extra content</p>
         </Foo>
-        <MyButton click={actions.clickButton} actions={actions}>Press me and admire the glory</MyButton>
+        <div>
+            Pressed: {buttonPressed && `yes`}, Times pressed: {timesPressed}
+        </div>
+        <MyButton click={actions.pressButton} pressed={buttonPressed} times={timesPressed}>
+            Press me
+        </MyButton>
         <Contacts url="/mockdata/contacts.json" />
     </div>
 );
 
 App.propTypes = {
-    stuff: PropTypes.array.isRequired,
+    timesPressed: PropTypes.number.isRequired,
+    buttonPressed: PropTypes.bool.isRequired,
     actions: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    stuff: state.todos
+    timesPressed: state.button.timesPressed,
+    buttonPressed: state.button.buttonPressed
 });
 
 const mapDispatchToProps = dispatch => ({

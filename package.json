@@ -1,42 +1,18 @@
 {
   "name": "haber",
-  "version": "1.0.0",
-  "description": "react learning",
-  "main": "index.js",
-  "scripts": {
-    "build": "babel -d js js/src",
-    "start": "serve",
-    "test": "eslint js/src",
-    "watch": "babel -w -d js js/src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danwdart/haber.git"
-  },
-  "keywords": [
-    "react"
-  ],
-  "author": "Dan Dart <npm@dandart.co.uk>",
-  "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/danwdart/haber/issues"
-  },
-  "homepage": "https://github.com/danwdart/haber#readme",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "serve": "^6.4.9",
-    "steal": "^1.6.4"
+    "react-scripts": "1.1.0",
+    "redux": "^3.7.2"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.39",
-    "@babel/core": "^7.0.0-beta.39",
-    "@babel/preset-react": "^7.0.0-beta.39",
-    "@babel/preset-stage-0": "^7.0.0-beta.39",
-    "eslint": "^4.16.0",
-    "eslint-plugin-react": "^7.6.1",
-    "steal-tools": "^1.11.2"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
