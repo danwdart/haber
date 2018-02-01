@@ -1,18 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from './components/app';
+import reducer from './reducers'
 
-import Foo from './components/foo';
-import Contacts from './components/contacts';
-
+const store = createStore(reducer);
 
 const main = document.querySelector(`main`);
 
-ReactDOM.render(
-    <div>
-        <Foo name="Bob">
-            <p>Extra content</p>
-        </Foo>
-        <Contacts url="/mockdata/contacts.json" />
-    </div>,
+render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
     main
 );

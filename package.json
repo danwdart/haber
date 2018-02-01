@@ -23,11 +23,12 @@
   },
   "homepage": "https://github.com/danwdart/haber#readme",
   "dependencies": {
-    "express": "^4.16.2",
-    "isomorphic-fetch": "^2.2.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "serve": "^6.4.9"
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "serve": "^6.4.9",
+    "steal": "^1.6.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.39",
@@ -36,7 +37,6 @@
     "@babel/preset-stage-0": "^7.0.0-beta.39",
     "eslint": "^4.16.0",
     "eslint-plugin-react": "^7.6.1",
-    "steal": "^1.6.4",
     "steal-tools": "^1.11.2"
   }
 }
