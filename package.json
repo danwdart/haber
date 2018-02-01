@@ -4,44 +4,39 @@
   "description": "react learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pug": "pug public/src/index.pug -o public",
-    "browserify": "browserify -d -t babelify public/src/js/index.js -o public/js/index.js",
-    "babel": "babel src -d app",
-    "build": "npm run pug && npm run browserify && npm run babel",
-    "watch-js": "watchy -w public/src/js -- npm run browserify",
-    "watch-app": "watchy -w src/**/*.js -- npm run babel",
-    "watch-views": "watchy -w public/src/pug/ -- npm run pug",
-    "watch": "npm run watch-js & npm run watch-app & npm run watch-views",
-    "start": "node app/index.js"
+    "build": "babel -d js js/src",
+    "start": "serve",
+    "test": "eslint js/src",
+    "watch": "babel -w -d js js/src"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kathiedart/haber.git"
+    "url": "git+https://github.com/danwdart/haber.git"
   },
   "keywords": [
     "react"
   ],
-  "author": "Kathie Dart <npm@kathiedart.uk>",
+  "author": "Dan Dart <npm@dandart.co.uk>",
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/kathiedart/haber/issues"
+    "url": "https://github.com/danwdart/haber/issues"
   },
-  "homepage": "https://github.com/kathiedart/haber#readme",
+  "homepage": "https://github.com/danwdart/haber#readme",
   "dependencies": {
     "express": "^4.16.2",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "serve": "^6.4.9"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-preset-babili": "0.1.4",
-    "babel-preset-react": "^6.24.1",
-    "babelify": "^8.0.0",
-    "browserify": "^15.2.0",
-    "pug-cli": "^1.0.0-alpha6",
-    "watchy": "^0.8.0"
+    "@babel/cli": "^7.0.0-beta.39",
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-react": "^7.0.0-beta.39",
+    "@babel/preset-stage-0": "^7.0.0-beta.39",
+    "eslint": "^4.16.0",
+    "eslint-plugin-react": "^7.6.1",
+    "steal": "^1.6.4",
+    "steal-tools": "^1.11.2"
   }
 }
