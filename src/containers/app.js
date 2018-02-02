@@ -7,7 +7,6 @@ import Contacts from '../components/contacts';
 import Foo from '../components/foo';
 
 import * as ButtonActions from '../actions/button';
-import * as AjaxActions from '../actions/ajax';
 import * as ContactsActions from '../actions/contacts';
 
 const App = ({buttonPressed, timesPressed, contacts, actions}) => (
@@ -25,8 +24,6 @@ const App = ({buttonPressed, timesPressed, contacts, actions}) => (
     </div>
 );
 
-App.dispatch(ContactsActions.requestContacts);
-
 App.propTypes = {
     timesPressed: PropTypes.number.isRequired,
     buttonPressed: PropTypes.bool.isRequired,
@@ -41,7 +38,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(ButtonActions, AjaxActions, dispatch)
+    actions: bindActionCreators({...ButtonActions, ...ContactsActions}, dispatch)
 });
 
 export default connect(

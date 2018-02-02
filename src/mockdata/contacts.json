@@ -1,12 +1,12 @@
 [
     {
         "id": 0,
-        "name": "Bob Dobbs",
-        "location": "Bob's House"
+        "name": "MOCK",
+        "location": "MOCK"
     },
     {
         "id": 1,
-        "name": "Connie Dobbs",
-        "location": "Dobbstown"
+        "name": "MOCK",
+        "location": "MOCK"
     }
 ]
