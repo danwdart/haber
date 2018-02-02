@@ -7,8 +7,10 @@ import Contacts from '../components/contacts';
 import Foo from '../components/foo';
 
 import * as ButtonActions from '../actions/button';
+import * as AjaxActions from '../actions/ajax';
+import * as ContactsActions from '../actions/contacts';
 
-const App = ({buttonPressed, timesPressed, actions}) => (
+const App = ({buttonPressed, timesPressed, contacts, actions}) => (
     <div>
         <Foo name="Bob">
             <p>Extra content</p>
@@ -19,23 +21,27 @@ const App = ({buttonPressed, timesPressed, actions}) => (
         <MyButton click={actions.pressButton} pressed={buttonPressed} times={timesPressed}>
             Press me
         </MyButton>
-        <Contacts url="/mockdata/contacts.json" />
+        <Contacts data={contacts} />
     </div>
 );
+
+App.dispatch(ContactsActions.requestContacts);
 
 App.propTypes = {
     timesPressed: PropTypes.number.isRequired,
     buttonPressed: PropTypes.bool.isRequired,
+    contacts: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
+    contacts: state.contacts,
     timesPressed: state.button.timesPressed,
     buttonPressed: state.button.buttonPressed
 });
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(ButtonActions, dispatch)
+    actions: bindActionCreators(ButtonActions, AjaxActions, dispatch)
 });
 
 export default connect(
