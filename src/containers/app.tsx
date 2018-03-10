@@ -1,34 +1,43 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MyButton from '../components/my-button';
 import Contacts from '../components/contacts';
 import Foo from '../components/foo';
+import {Contact} from '../types/contact';
+import {Action} from '../types/action';
 
 import * as ButtonActions from '../actions/button';
 import * as ContactsActions from '../actions/contacts';
 
-const App = ({buttonPressed, timesPressed, contacts, actions}) => (
+type AppProps = {
+  timesPressed: number,
+  buttonPressed: boolean,
+  contacts: Contact[],
+  actions: Action
+}
+
+const App = (props: AppProps) => (
+  <div>
+    <Foo name="Bob">
+      <p>Extra content</p>
+    </Foo>
     <div>
-        <Foo name="Bob">
-            <p>Extra content</p>
-        </Foo>
-        <div>
-            Pressed: {buttonPressed && `yes`}, Times pressed: {timesPressed}
-        </div>
-        <MyButton click={actions.pressButton} pressed={buttonPressed} times={timesPressed}>
-            Press me
-        </MyButton>
-        <Contacts data={contacts} />
+      Pressed: {props.buttonPressed && `yes`},
+      Times pressed: {props.timesPressed}
     </div>
+    <MyButton
+      click={props.actions.pressButton}
+      pressed={props.buttonPressed}
+      times={timesPressed}
+    >
+      Press me
+    </MyButton>
+    <Contacts data={props.contacts} />
+  </div>
 );
 
 App.propTypes = {
-    timesPressed: PropTypes.number.isRequired,
-    buttonPressed: PropTypes.bool.isRequired,
-    contacts: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
