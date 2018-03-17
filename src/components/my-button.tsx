@@ -4,7 +4,7 @@ type ButtonProps = {
   click: ((event: React.MouseEvent<HTMLButtonElement>) => void),
   pressed: boolean,
   times: number,
-  children: any[]
+  children: any
 };
 
 export default (props: ButtonProps) =>

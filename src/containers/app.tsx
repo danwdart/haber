@@ -10,12 +10,18 @@ import {Action} from '../types/action';
 import * as ButtonActions from '../actions/button';
 import * as ContactsActions from '../actions/contacts';
 
+type State = {
+  contacts: Contact[],
+  timesPressed: number,
+  buttonPressed: boolean
+};
+
 type AppProps = {
   timesPressed: number,
   buttonPressed: boolean,
   contacts: Contact[],
   actions: Action
-}
+};
 
 const App = (props: AppProps) => (
   <div>
@@ -29,7 +35,7 @@ const App = (props: AppProps) => (
     <MyButton
       click={props.actions.pressButton}
       pressed={props.buttonPressed}
-      times={timesPressed}
+      times={props.timesPressed}
     >
       Press me
     </MyButton>
@@ -37,20 +43,19 @@ const App = (props: AppProps) => (
   </div>
 );
 
-App.propTypes = {
-};
-
-const mapStateToProps = state => ({
+export default connect(
+  (state: State) => ({
     contacts: state.contacts,
     timesPressed: state.button.timesPressed,
     buttonPressed: state.button.buttonPressed
-});
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators({...ButtonActions, ...ContactsActions}, dispatch)
-});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  }),
+  (dispatch: Function) => ({
+    actions: bindActionCreators(
+      {
+        ...ButtonActions,
+        ...ContactsActions
+      },
+      dispatch
+    )
+  })
 )(App);

@@ -2,7 +2,11 @@ import React from 'react';
 import ContactRow from './contact-row';
 import {Contact} from '../types/contact';
 
-export default (props: {data: Contact[]}) => {
+type MyProps = {
+  data: Contact[]
+};
+
+export default (props: MyProps) =>
   <table>
     <thead>
       <tr>

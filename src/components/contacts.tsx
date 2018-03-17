@@ -4,4 +4,4 @@ import {Contact} from '../types/contact';
 import ContactTable from './contact-table';
 
 export default (props: {data: Contact[]}) =>
-  <ContactTable data={props.data}/>
+  <ContactTable {...props}/>
