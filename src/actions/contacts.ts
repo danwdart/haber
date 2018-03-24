@@ -1,5 +1,6 @@
 import {Contact} from '../types/contact';
-import {ContactsActions} from '../constants/contacts';
+import {Action} from '../types/action';
+import {ContactsActions} from '../enums/contacts';
 
 export const requestContacts = () =>
   async (dispatch: Function) =>
@@ -15,5 +16,5 @@ export const hydrateContacts = (contacts: Contact[]) => (
   {
     type: ContactsActions.hydrateContacts,
     contacts
-  }
+  } as Action
 );
