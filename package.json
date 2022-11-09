@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^18.3.0-next-f0efa1164-20220901",
-    "react-dom": "^18.3.0-next-f0efa1164-20220901",
+    "react": "^18.3.0-next-fecc288b7-20221025",
+    "react-dom": "^18.3.0-next-fecc288b7-20221025",
     "react-scripts-ts": "4.0.8"
   },
   "scripts": {
@@ -14,11 +14,11 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
-    "@types/jest": "^29.1.1",
-    "@types/node": "^18.7.23",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "typescript": "^4.9.1-beta",
+    "@types/jest": "^29.2.2",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "typescript": "^5.0.0-dev.20221109",
     "typewiz": "^1.2.4",
     "typewiz-node": "^1.2.4"
   }
